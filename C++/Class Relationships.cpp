@@ -22,7 +22,7 @@ private:
 
 
 public:
-	Movie() : ID("None"), name("None"), release_data("None"), director_id("None") {} //TO DO 3: initialize all string variables to ìNoneî,  keep the vector as it is. 
+	Movie() : ID("None"), name("None"), release_data("None"), director_id("None") {} //TO DO 3: initialize all string variables to ‚ÄúNone‚Äù,  keep the vector as it is. 
 
 	Movie(string _id, string _name, string _release_data, string _director_id, vector<string> _stars_ids)
 		: ID(_id), name(_name), release_data(_release_data), director_id(_director_id), stars_ids(_stars_ids) {
@@ -33,7 +33,7 @@ public:
 	}//TO DO 5: this function should return the id of the movie
 	string get_DirectorID() {
 		return director_id;
-	}//TO DO 6: this function should return the id of the movieís director 
+	}//TO DO 6: this function should return the id of the movie‚Äôs director 
 	void printInfo() {
 		cout << ID << " | " << name << " | " << release_data << " | Director ID: " << director_id;
 		cout << "\nStars IDs: ";
@@ -55,7 +55,7 @@ private:
 	string place_of_birth;
 
 public:
-	Staff() : ID("None"), name("None"), place_of_birth("None") {}//TO DO 9: initialize all string variables to ìNoneî.
+	Staff() : ID("None"), name("None"), place_of_birth("None") {}//TO DO 9: initialize all string variables to ‚ÄúNone‚Äù.
 	Staff(string _id, string _name, string _place_of_birth)
 		: ID(_id), name(_name), place_of_birth(_place_of_birth) {
 	}//TO DO 10: Implement this constructor 
