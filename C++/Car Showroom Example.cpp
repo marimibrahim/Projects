@@ -35,7 +35,7 @@ string toLower(const string& input) {
     return output;
 }
 void printAt(const vector<string>& names, const vector<int>& powers, int index) {
-    //To Do #3: If the index is outside the range, print ìCar is not foundî; otherwise, print the car at that index in the format: Name {name_of_the_car_at_index} Power {power_of_the_car_at_index}   
+    //To Do #3: If the index is outside the range, print ‚ÄúCar is not found‚Äù; otherwise, print the car at that index in the format: Name {name_of_the_car_at_index} Power {power_of_the_car_at_index}   
     if (index < 0 || index > names.size())
     {
         cout << "Car is not found\n";
@@ -52,7 +52,7 @@ void printShowroom(const vector<string>& names, const vector<int>& powers) {
     }
 }
 int findByName(const vector<string>& names, const string& to_find) {
-    //To Do #5: using the stringsí find function, return the index of the name at which the to_find is found. If nothing is found, then return -1. Note: You must use toLower with all of your strings to compare in a non-sensitive manner. 
+    //To Do #5: using the strings‚Äô find function, return the index of the name at which the to_find is found. If nothing is found, then return -1. Note: You must use toLower with all of your strings to compare in a non-sensitive manner. 
     int index = -1;
     for (int i = 0; i < names.size(); i++)
     {
@@ -82,7 +82,7 @@ string getModel(const string& name)
     return model;
 }
 void removeAt(vector<string>& names, vector<int>& powers, int index) {
-    //To Do #9: if index is outside the range, then print ìCar is not foundî otherwise, delete the car at that index (delete from the names and powers). Hint: you must use the vectorsí erase function here 
+    //To Do #9: if index is outside the range, then print ‚ÄúCar is not found‚Äù otherwise, delete the car at that index (delete from the names and powers). Hint: you must use the vectors‚Äô erase function here 
     if (index < 0 || index > names.size())
     {
         cout << "Car is not found\n";
