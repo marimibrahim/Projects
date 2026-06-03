@@ -1,0 +1,563 @@
+@font-face {
+  font-family: 'Rigoletto';
+  src: url('../../fonts/Rigoletto.otf');
+}
+
+@font-face {
+  font-family: 'Able Lead';
+  src: url('../../fonts/Able_Lead.ttf');
+}
+
+@font-face {
+  font-family: 'Hypermarket';
+  src: url('../../fonts/hypermarket-regular.ttf');
+}
+
+@font-face {
+  font-family: 'Ramillas Regular';
+  src: url('../../fonts/TT_Ramillas_Trial_Regular.ttf');
+}
+
+body {
+  background-image: url(../images/Background.png);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Ramillas Regular', serif;
+}
+
+.title_font {
+  font-family: 'Rigoletto', sans-serif;
+  font-weight: normal;
+}
+
+.navbar .title_font {
+  color: #133951;
+  font-size: 40px;
+  margin: 10px;
+}
+
+.receipt .title_font {
+  font-size: 30px;
+  font-weight: 600;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-transform: none;
+}
+
+.groceries {
+  font-family: 'Hypermarket', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.list {
+  margin: 5px 0;
+}
+
+.info {
+  margin: 0;
+  text-align: left;
+}
+
+p,
+table,
+.info {
+  font-family: 'Hypermarket', sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead {
+  border-top: 1px dashed;
+  border-bottom: 1px dashed;
+}
+
+.begin {
+  padding-left: 0;
+}
+
+td {
+  padding: 2px 10px;
+  vertical-align: top;
+}
+
+.length {
+  text-align: right;
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+.thanks {
+  text-align: center;
+  padding: 15px 0 8px;
+}
+
+.thanks img {
+  vertical-align: middle;
+  width: 70%;
+  max-width: 260px;
+  border: 0;
+}
+
+.nav_style {
+  font-size: 30px;
+  background-color: #F3C12C;
+  color: #133951;
+}
+
+.nav-link {
+  margin-left: 30px;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2819, 57, 81, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler {
+  border: 2px solid #133951;
+}
+
+.rest {
+  position: relative;
+  padding-top: 14vh;
+}
+
+section {
+  background-color: #EDE2CD;
+  width: 90%;
+  min-height: 70vh;
+  border-radius: 10px;
+  margin: 0 auto 5vh;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.line {
+  border-right: #133951 solid 2px;
+}
+
+.custom-col {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  min-height: 66vh;
+  position: relative;
+}
+
+.patch {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.patch img {
+  width: 450px;
+  height: auto;
+}
+
+.basket-container {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.basket-container img.basket-bg {
+  width: auto;
+  height: 50vh;
+  display: block;
+  max-width: 100%;
+}
+
+.receipt {
+  top: 0;
+  position: relative;
+  background-image: url(../images/Receipt\ Shadow.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 400px;
+  padding: 30px 30px 42px;
+  text-transform: uppercase;
+  margin: 20px auto;
+}
+
+.no-margin {
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  position: absolute;
+  width: 40%;
+  height: auto;
+}
+
+.eggs {
+  top: 8%;
+  right: 7%;
+}
+
+.sugar {
+  top: 15%;
+  left: 10%;
+}
+
+.milk {
+  top: 35%;
+  right: 10%;
+  width: 35%;
+}
+
+.chicken {
+  top: 50%;
+  left: 12%;
+}
+
+.cherries {
+  bottom: 8%;
+  left: 35%;
+}
+
+.basket-container,
+.receipt,
+.basket-container .item {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  will-change: transform;
+}
+
+.basket-container:hover {
+  transform: translateY(-50%) rotate(0deg) translateY(-4px) scale(1.03);
+  filter: drop-shadow(0 12px 18px rgba(19, 57, 81, 0.22));
+}
+
+.basket-container .item:hover {
+  transform: rotate(0deg) translateY(-4px) scale(1.03);
+  filter: drop-shadow(0 8px 10px rgba(19, 57, 81, 0.25));
+}
+
+.receipt:hover {
+  transform: rotate(0deg) translateY(-4px) scale(1.03);
+  
+}
+
+/* --- RECEIPT BUTTONS --- */
+
+.receipt .text-center.mt-4 {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px !important;
+  margin-bottom: 18px !important;
+}
+
+#clear-list-btn,
+#download-list-btn {
+  display: inline-block;
+  position: relative;
+  z-index: 6;
+  margin: 0;
+  border: none;
+  font-family: 'Ramillas Regular', serif;
+  color: white;
+}
+
+#clear-list-btn {
+  background-color: #133951;
+}
+
+#clear-list-btn:hover {
+  color: white;
+  background-color: #F3C12C;
+  border: none;
+}
+
+#download-list-btn {
+  background-color: #F3C12C;
+}
+
+#download-list-btn:hover {
+  color: white;
+  background-color: #133951;
+  border: none;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 1024px) {
+  .patch img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .basket {
+    display: none !important;
+  }
+
+  .line {
+    border-right: none;
+  }
+
+  section .row {
+    justify-content: center;
+  }
+
+  section .receipt.custom-col {
+    flex: 0 0 100%;
+    max-width: 420px;
+    min-height: auto;
+  }
+
+  .receipt {
+    width: min(92vw, 420px);
+    max-width: 420px;
+    margin: 20px auto;
+    padding-bottom: 44px;
+  }
+
+  .receipt .text-center.mt-4 {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .patch img {
+    width: 300px;
+  }
+
+  .thanks img {
+    width: 70%;
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patch img {
+    width: 200px;
+  }
+
+  .rest {
+    padding-top: 12vh;
+  }
+
+  section {
+    width: 94%;
+  }
+
+  .receipt {
+    width: 92vw;
+    max-width: 360px;
+    padding: 24px 22px 40px;
+  }
+
+  .receipt .title_font {
+    font-size: 26px;
+  }
+
+  .groceries {
+    font-size: 1.25rem;
+  }
+
+  p,
+  table,
+  .info {
+    font-size: 0.9rem;
+    line-height: 1.7rem;
+  }
+
+  td {
+    padding: 2px 6px;
+  }
+
+  .receipt .text-center.mt-4 {
+    gap: 8px;
+  }
+
+  #clear-list-btn,
+  #download-list-btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+
+/* --- KEEP RECEIPT BUTTONS VISIBLE --- */
+
+.receipt {
+  display: flex;
+  flex-direction: column;
+  min-height: 640px;
+  padding-bottom: 44px;
+}
+
+.thanks {
+  margin-top: auto;
+  padding-bottom: 8px;
+}
+
+.receipt-actions {
+  position: relative;
+  z-index: 20;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.receipt-btn,
+#clear-list-btn,
+#download-list-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 21;
+  border: none;
+  border-radius: 999px;
+  padding: 9px 15px;
+  font-family: 'Ramillas Regular', serif;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  color: white;
+  cursor: pointer;
+}
+
+#clear-list-btn {
+  background-color: #133951;
+}
+
+#download-list-btn {
+  background-color: #F3C12C;
+}
+
+#clear-list-btn:hover {
+  background-color: #F3C12C;
+  color: white;
+}
+
+#download-list-btn:hover {
+  background-color: #133951;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .receipt {
+    min-height: 640px;
+    padding-bottom: 44px;
+  }
+
+  .receipt-actions {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .receipt {
+    min-height: 610px;
+  }
+
+  .receipt-actions {
+    gap: 8px;
+  }
+
+  .receipt-btn,
+  #clear-list-btn,
+  #download-list-btn {
+    font-size: 0.85rem;
+    padding: 8px 11px;
+  }
+}
+
+.basket-container {
+  position: relative;
+}
+
+.basket-container .basket-bg {
+  position: relative;
+  z-index: 1;
+}
+
+.basket-items-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.basket-items-layer .item {
+  position: absolute;
+  width: 22%;
+  height: auto;
+  max-width: 140px;
+  object-fit: contain;
+  pointer-events: auto;
+  top: 34%;
+  left: 39%;
+}
+
+.basket-items-layer .eggs {
+  top: 8%;
+  right: 7%;
+  left: auto;
+  width: 40%;
+}
+
+.basket-items-layer .sugar {
+  top: 15%;
+  left: 10%;
+  width: 40%;
+}
+
+.basket-items-layer .milk {
+  top: 35%;
+  right: 10%;
+  left: auto;
+  width: 35%;
+}
+
+.basket-items-layer .chicken {
+  top: 50%;
+  left: 12%;
+  width: 40%;
+}
+
+.basket-items-layer .cherries {
+  top: auto;
+  bottom: 8%;
+  left: 35%;
+  width: 40%;
+}
+
+.basket-items-layer .flour {
+  top: auto;
+  bottom: 35%;
+  left: 35%;
+  width: 40%;
+}

@@ -1,0 +1,644 @@
+:root {
+    --cream: #FAF5E9;
+    --paper: #F7EFE0;
+    --paper-soft: #FFF8E9;
+    --dark-blue: #133951;
+    --yellow: #F3C12C;
+    --white: #FFFFFF;
+    --ink-soft: rgba(19, 57, 81, 0.72);
+    --shadow-soft: 0 18px 38px rgba(19, 57, 81, 0.18);
+}
+
+@font-face {
+    font-family: 'Ramillas';
+    src: url('../fonts/TT_Ramillas_Trial_Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Rigoletto';
+    src: url('../fonts/Rigoletto.otf');
+}
+
+@font-face {
+    font-family: 'Ramillas Bold';
+    src: url('../fonts/TT_Ramillas_Trial_Bold.ttf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Ramillas', serif;
+    color: var(--dark-blue);
+    background-color: var(--cream);
+    background-image:
+        linear-gradient(rgba(250, 245, 233, 0.72), rgba(250, 245, 233, 0.72)),
+        url("images/bglogin.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.dark-blue-text {
+    color: var(--dark-blue);
+    font-family: 'Ramillas Bold', serif;
+}
+
+.title_font {
+    font-family: 'Rigoletto', sans-serif;
+    font-weight: normal;
+}
+
+.navbar .title_font {
+    color: var(--dark-blue);
+    font-size: 40px;
+    margin: 10px;
+}
+
+.nav_style {
+    font-size: 30px;
+    font-family: 'Ramillas', serif;
+    background-color: var(--yellow);
+    color: var(--dark-blue);
+}
+
+.nav-link {
+    margin-left: 30px;
+}
+
+.navbar-toggler {
+    border: 2px solid var(--dark-blue);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2819, 57, 81, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.profile-container {
+    width: min(94vw, 1180px);
+    margin: 54px auto 70px;
+}
+
+.profile-banner {
+    display: none;
+}
+
+/* Profile avatar + welcome */
+.avatar-container {
+    text-align: center;
+    margin-top: 0;
+}
+
+.avatar {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    border: 5px solid var(--yellow);
+    background-color: var(--paper-soft);
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(19, 57, 81, 0.18);
+}
+
+#welcome-text {
+    text-align: center;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-family: 'Ramillas Bold', serif;
+    margin: 16px 0 14px;
+    color: var(--dark-blue);
+}
+
+/* Tabs */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto 32px;
+    border-bottom: none;
+}
+
+.tab-btn {
+    background: rgba(255, 248, 233, 0.78);
+    border: 2px solid rgba(19, 57, 81, 0.22);
+    border-radius: 999px;
+    font-size: 1rem;
+    color: var(--dark-blue);
+    cursor: pointer;
+    padding: 9px 26px;
+    transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.tab-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--yellow);
+    background: var(--paper-soft);
+}
+
+.tab-btn.active {
+    background: var(--dark-blue);
+    color: var(--cream);
+    border-color: var(--dark-blue);
+    font-family: 'Ramillas Bold', serif;
+}
+
+.tab-content {
+    display: none;
+}
+
+.active-content {
+    display: block;
+}
+
+#favorites,
+#settings {
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+/* Favorites layout */
+#favorites .container {
+    max-width: 1240px;
+}
+
+#favoritesGrid {
+    justify-content: center;
+}
+
+/* Favorite recipe cards */
+.recipe-card {
+    background: var(--paper-soft);
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(50, 31, 18, 0.18);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 26px rgba(50, 31, 18, 0.26);
+}
+
+.saved-recipe-card {
+    cursor: pointer;
+}
+
+.card-img-placeholder {
+    height: 175px;
+    background-color: #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.saved-recipe-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Prevent broken image icon from visually dominating */
+.saved-recipe-img:not([src]),
+.saved-recipe-img[src=""] {
+    display: none;
+}
+
+.lemon-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.15rem;
+    background: var(--dark-blue);
+    color: var(--yellow);
+    border-radius: 50%;
+    padding: 7px 9px;
+    z-index: 3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+}
+
+.card-info {
+    background: rgba(255, 248, 233, 0.96);
+    padding: 14px !important;
+}
+
+.card-info h3 {
+    font-family: 'Ramillas Bold', serif;
+    color: var(--dark-blue);
+    line-height: 1.15;
+    margin-bottom: 8px;
+}
+
+.card-info p {
+    color: var(--ink-soft) !important;
+    font-family: 'Ramillas', serif;
+}
+
+.badge {
+    font-family: 'Ramillas Bold', serif;
+    border-radius: 999px;
+    padding: 6px 10px;
+}
+
+#favoritesGrid .text-center,
+#favoritesGrid p {
+    color: var(--dark-blue);
+    font-family: 'Ramillas Bold', serif;
+    font-size: 1.1rem;
+}
+
+.settings-list {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px 20px;
+    width: 100%;
+}
+
+.general-info {
+    width: 100%;
+    background: rgba(222, 217, 209, 0.94);
+    color: var(--dark-blue);
+    border: none;
+    border-radius: 0;
+    padding: 50px 60px;
+    position: relative;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+/* Paper texture overlay */
+.general-info::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(images/paper-texture.jpg);
+    background-size: cover;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.general-info > * {
+    position: relative;
+    z-index: 1;
+}
+
+.settings-title {
+    font-family: 'Ramillas Bold', serif;
+    text-align: center;
+    color: var(--dark-blue);
+    font-size: 1.65rem;
+    letter-spacing: 0.08em;
+    margin: 0 0 20px;
+}
+
+.ceramic-divider {
+    height: 2px;
+    background: repeating-linear-gradient(
+        to right,
+        rgba(19, 57, 81, 0.35) 0 8px,
+        transparent 8px 14px
+    );
+    margin: 0 0 20px;
+    border-radius: 2px;
+}
+
+/* Settings form profile image */
+.pfp-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6px 0 28px !important;
+}
+
+#file-input {
+    display: none;
+}
+
+.upload-button {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 4px solid var(--dark-blue);
+    background-color: var(--paper-soft);
+    box-shadow: 0 9px 18px rgba(19, 57, 81, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.upload-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(19, 57, 81, 0.22);
+}
+
+.profile-picture {
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: none;
+}
+
+/* Settings fields */
+.box {
+    width: 100%;
+    margin-bottom: 17px;
+    text-align: left;
+}
+
+.box label,
+.box span {
+    display: block;
+    color: var(--dark-blue);
+    font-size: 16px;
+    font-family: 'Ramillas Bold', serif;
+    margin-bottom: 7px;
+    padding-left: 14px;
+}
+
+.box input {
+    width: 100%;
+    height: 46px;
+    background: rgba(250, 245, 233, 0.72);
+    border: 2px solid var(--dark-blue);
+    outline: none;
+    border-radius: 999px;
+    font-size: 16px;
+    color: var(--dark-blue);
+    padding: 0 22px;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box input:focus {
+    background: var(--paper-soft);
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 4px rgba(243, 193, 44, 0.22);
+}
+
+.box input:disabled {
+    opacity: 0.75;
+    background-color: rgba(250, 245, 233, 0.46);
+    cursor: not-allowed;
+}
+
+/* Buttons */
+.edit-profile {
+    background: var(--dark-blue);
+    color: var(--cream);
+    border: none;
+    padding: 11px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: 'Ramillas Bold', serif;
+    font-weight: bold;
+    box-shadow: 0 8px 16px rgba(19, 57, 81, 0.18);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.edit-profile:hover {
+    background: var(--yellow);
+    color: var(--dark-blue);
+    transform: translateY(-2px);
+}
+
+.save-active {
+    background-color: var(--yellow);
+    color: var(--dark-blue);
+}
+
+.save-active:hover {
+    background-color: var(--dark-blue);
+    color: var(--cream);
+}
+
+#logoutBtn {
+    display: block;
+    margin: 24px auto 0;
+    background-color: transparent;
+    color: var(--dark-blue);
+    border: 2px solid var(--dark-blue);
+    border-radius: 999px;
+    box-shadow: none;
+}
+
+#logoutBtn:hover {
+    background-color: var(--dark-blue);
+    color: var(--cream);
+    border-color: var(--dark-blue);
+}
+   
+.profile-container.settings-mode .avatar-container,
+.profile-container.settings-mode #welcome-text {
+    display: none;
+}   
+
+.profile-container.settings-mode {
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+
+.profile-container.settings-mode .avatar {
+    width: 62px;
+    height: 62px;
+    border-width: 4px;
+}
+
+.profile-container.settings-mode #welcome-text {
+    font-size: 1.75rem;
+    margin: 6px 0 6px;
+}
+
+.profile-container.settings-mode .tab-nav {
+    margin-bottom: 12px;
+}
+
+.profile-container.settings-mode .settings-list {
+    max-width: 540px;
+    padding-bottom: 0;
+}
+
+.profile-container.settings-mode .general-info {
+    padding: 26px 44px 22px;
+}
+
+.profile-container.settings-mode .settings-title {
+    font-size: 1.45rem;
+    margin-bottom: 10px;
+}
+
+.profile-container.settings-mode .ceramic-divider {
+    margin-bottom: 12px;
+}
+
+.profile-container.settings-mode .box {
+    margin-bottom: 9px;
+}
+
+.profile-container.settings-mode .box label,
+.profile-container.settings-mode .box span {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.profile-container.settings-mode .box input {
+    height: 37px;
+    font-size: 14px;
+    padding: 0 18px;
+}
+
+.profile-container.settings-mode .text-center.mt-5 {
+    margin-top: 16px !important;
+    margin-bottom: 10px !important;
+}
+
+.profile-container.settings-mode #logoutBtn {
+    margin-top: 12px;
+}
+
+.profile-container.settings-mode #settings {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar .title_font {
+        font-size: 32px;
+    }
+
+    .nav_style {
+        font-size: 24px;
+    }
+
+    .profile-container {
+        width: 94vw;
+        margin: 38px auto 55px;
+    }
+
+    .avatar {
+        width: 88px;
+        height: 88px;
+    }
+
+    #welcome-text {
+        font-size: 2.35rem;
+    }
+
+    .tab-nav {
+        gap: 0.7rem;
+    }
+
+    .tab-btn {
+        padding: 8px 18px;
+        font-size: 0.95rem;
+    }
+
+    .settings-list {
+        padding: 0 12px 20px;
+    }
+
+    .general-info {
+        padding: 40px 30px;
+    }
+
+    .upload-button {
+        width: 96px;
+        height: 96px;
+    }
+
+    .card-img-placeholder {
+        height: 190px;
+    }
+
+    .profile-container.settings-mode {
+        margin-top: 26px;
+    }
+
+    .profile-container.settings-mode .avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profile-container.settings-mode #welcome-text {
+        font-size: 1.9rem;
+    }
+
+    .profile-container.settings-mode .general-info {
+        padding: 30px 28px;
+    }
+}
+
+@media (max-width: 520px) {
+    .nav-link {
+        margin-left: 0;
+    }
+
+    .profile-container {
+        margin-top: 28px;
+    }
+
+    #welcome-text {
+        font-size: 2rem;
+    }
+
+    .tab-nav {
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        padding: 7px 15px;
+        font-size: 0.9rem;
+    }
+
+    .general-info {
+        padding: 32px 20px;
+    }
+
+    .settings-title {
+        font-size: 1.35rem;
+    }
+
+    .box label,
+    .box span {
+        font-size: 14px;
+    }
+
+    .box input {
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .edit-profile {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .profile-container.settings-mode {
+        margin-top: 24px;
+    }
+
+    .profile-container.settings-mode .avatar {
+        width: 64px;
+        height: 64px;
+    }
+
+    .profile-container.settings-mode #welcome-text {
+        font-size: 1.7rem;
+    }
+
+    .profile-container.settings-mode .general-info {
+        padding: 28px 20px;
+    }
+
+    .profile-container.settings-mode .box input {
+        height: 39px;
+    }
+}

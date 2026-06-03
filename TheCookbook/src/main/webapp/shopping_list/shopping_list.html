@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>        
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="nav_style">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand title_font" href="../home/index.html">The Cookbook</a>
+                    <button class="navbar-toggler nav_style" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link nav_style" href="../recipes/recipe.html">Recipes</a>
+                            <a class="nav-link nav_style" href="shopping_list.html">Shopping List</a>
+                            <a class="nav-link nav_style" href="../profile/profile.html">My Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="rest">
+            <div class="patch">
+                <img src="images/Patch.png">
+            </div>
+
+            <section>
+			    <div class="container-fluid text-center no-margin">
+			        <div class="row">
+			
+			            <div class="col-6 line basket custom-col">
+			                <div class="basket-container">
+			                    <img src="images/Shopping Basket Shadow.png" class="basket-bg" alt="Shopping basket">
+			
+			                    <div class="basket-items-layer">
+			                        <img src="images/cherries.png" class="item cherries" id="basket-cherries" style="display: none;" alt="Cherries">
+			                        <img src="images/chicken.png" class="item chicken" id="basket-chicken" style="display: none;" alt="Chicken">
+			                        <img src="images/eggs.png" class="item eggs" id="basket-eggs" style="display: none;" alt="Eggs">
+			                        <img src="images/flour.png" class="item flour" id="basket-flour" style="display: none;" alt="Flour">
+			                        <img src="images/sugar.png" class="item sugar" id="basket-sugar" style="display: none;" alt="Sugar">
+			                        <img src="images/milk.png" class="item milk" id="basket-milk" style="display: none;" alt="Milk">
+			                    </div>
+			                </div>
+			            </div>
+			
+			            <div class="col-6 receipt custom-col">
+			                <h2 class="title_font">The Cookbook</h2>
+			                <p class="groceries">GROCERIES</p>
+			                <p class="info" id="receipt-date">DATE</p>
+			                <p class="info" id="receipt-name">NAME</p>
+			
+			                <table class="list">
+			                    <thead>
+			                        <tr>
+			                            <td class="begin">QTY</td>
+			                            <td>ITEM</td>
+			                            <td class="length">UNIT</td>
+			                        </tr>
+			                    </thead>
+			                    <tbody id="shopping-list-body"></tbody>
+			                </table>
+			
+			                <div class="thanks">
+			                    <p>THANK YOU FOR VISITING!</p>
+			                    <img src="images/barcode.png" alt="Barcode">
+			                </div>
+			
+			                <div class="receipt-actions">
+			                    <button id="clear-list-btn" class="receipt-btn">Clear List</button>
+			                    <button id="download-list-btn" class="receipt-btn">Download List</button>
+			                </div>
+			            </div>
+			
+			        </div>
+			    </div>
+			</section>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
